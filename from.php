@@ -11,7 +11,7 @@
 <body>
     <h1>Please Insert your information here!</h1>
 
-    <form action="id.php" method="POST">
+    <form action="id.php" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
             <input name = "std_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -31,6 +31,10 @@
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Batch</label>
             <input name = "std_batch" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Select File</label>
+            <input name = "std_img" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <button name="generateinfo" value="submit data"  class="btn btn-primary" type="submit">Submit</button>
     </form>

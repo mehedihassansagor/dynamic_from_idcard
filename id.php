@@ -5,6 +5,9 @@ if (isset($_POST['generateinfo'])) {
     $course = $_POST['std_course'];
     $id = $_POST['std_id'];
     $batch = $_POST['std_batch'];
+    $imgname = $_FILES['std_img']['name'];
+    $tmp_name = $_FILES['std_img']['tmp_name'];
+    move_uploaded_file($tmp_name, ("upload/" . $imgname));
 }
 ?>
 
@@ -21,7 +24,9 @@ if (isset($_POST['generateinfo'])) {
 <body>
     <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
         <div class="card" style="width: 18rem;">
-            <img src="studentpic.jpg" class="card-img-top" alt="...">
+            <img src="upload/<?php if (isset($imgname)) {
+                                    echo $imgname;
+                                } ?>" class="card-img-top" alt="...">
             <div class="card-body">
                 <p>Name:<?php if (isset($name)) {
                             echo $name;
